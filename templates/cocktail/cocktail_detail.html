@@ -1,0 +1,20 @@
+{% extends 'default.html' %}
+
+{% block content %}
+    <div class="long_info" align="center">
+        <h2>{{ cocktail.name }}</h2>
+        <br>
+        <p align="left">
+            <img class="photo" src="media/cocktail_photo/{{ cocktail.id }}.png" align="right">
+            <br>
+            <strong>Состав коктейля<br><br></strong>
+            {{ cocktail.compound }}
+            <br><br><br>
+            <strong>Приготовление<br><br></strong>
+            {{ cocktail.recipe }}
+            <br><br><br>
+            <strong>Категория<br><br></strong>
+            {{ cocktail.category }}
+        </p>
+    </div>
+{% endblock content %}

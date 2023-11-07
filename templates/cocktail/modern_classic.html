@@ -1,0 +1,18 @@
+{% extends 'default.html' %}
+{% load data_tags %}
+
+{% block content %}
+{% modern_classic as list %}
+    <div class="wrapper">
+    {% for cocktail in list %}
+        <div class="short_info" align="center">
+            <a class="custom_btn" href="{{ cocktail.slug }}">
+                <strong>{{ cocktail.name }}</strong>
+            </a>
+            <br><br>
+            <img class="small_photo" src="media/cocktail_photo/{{ cocktail.id }}.png">
+        </div>
+        &nbsp
+    {% endfor %}
+    </div>
+{% endblock content %}
