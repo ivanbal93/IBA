@@ -84,7 +84,18 @@
     <body>
         <div class="main_info">
             <div class="main_text">
-                <h1>Библиотека коктейлей IBA</h1><br>
+                <h1>
+                    Библиотека коктейлей IBA.
+                    {% if request.META.PATH_INFO == '/' %}
+                	    Все коктейли.
+                    {% elif request.META.PATH_INFO == '/unforgettable' %}
+                    	Незабываемые.
+                    {% elif request.META.PATH_INFO == '/modern_classic' %}
+                    	Современная классика.
+                    {% elif request.META.PATH_INFO == '/new_era_drinks' %}
+                    	Напитки новой эры.
+                    {% endif %}
+                </h1><br>
                 <a class="custom_btn" href="{% url 'home' %}"><strong>Все коктейли</strong></a>&nbsp
                 <a class="custom_btn" href="{% url 'unforgettable' %}"><strong>Незабываемые</strong></a>&nbsp
                 <a class="custom_btn" href="{% url 'modern_classic' %}"><strong>Современная классика</strong></a>&nbsp
