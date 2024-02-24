@@ -17,7 +17,7 @@
             }
             .main_info {
             position: absolute;
-            height: 140px;
+            height: 180px;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             }
@@ -32,6 +32,7 @@
             color: #ffffff;
             padding: 10px;
             border-radius: 5px;
+            border-color: #ffffff;
             }
             .short_info {
             height: 400px;
@@ -50,7 +51,7 @@
             color: #ffffff;
             margin: auto;
             padding: 20px;
-            margin-top: 70px;
+            margin-top: 50px;
             border-radius: 15px;
             margin-bottom: 30px;
             }
@@ -79,36 +80,45 @@
             color: #ffffff;
             margin-bottom: 0px;
             }
+            .searching_line {
+            background-color: #ffffff;
+            width: 250px;
+            color: #000000;
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 15px;
+            }
         </style>
     </head>
     <body>
         <div class="main_info">
-            <div class="main_text">
-                <h1>
-                    Библиотека коктейлей IBA.
-                    {% if request.META.PATH_INFO == '/' %}
-                	    Все коктейли.
-                    {% elif request.META.PATH_INFO == '/unforgettable' %}
-                    	Незабываемые.
-                    {% elif request.META.PATH_INFO == '/modern_classic' %}
-                    	Современная классика.
-                    {% elif request.META.PATH_INFO == '/new_era_drinks' %}
-                    	Напитки новой эры.
-                    {% endif %}
-                </h1><br>
-                <a class="custom_btn" href="{% url 'home' %}"><strong>Все коктейли</strong></a>&nbsp
-                <a class="custom_btn" href="{% url 'unforgettable' %}"><strong>Незабываемые</strong></a>&nbsp
-                <a class="custom_btn" href="{% url 'modern_classic' %}"><strong>Современная классика</strong></a>&nbsp
-                <a class="custom_btn" href="{% url 'new_era_drinks' %}"><strong>Напитки новой эры</strong></a>&nbsp
-            </div>
+                <div class="main_text">
+                    <h1>
+                        Библиотека коктейлей IBA
+                        {% if request.META.PATH_INFO == '/unforgettable' %}
+                              "Незабываемые"
+                        {% elif request.META.PATH_INFO == '/modern_classic' %}
+                              "Современная классика"
+                        {% elif request.META.PATH_INFO == '/new_era_drinks' %}
+                              "Напитки новой эры"
+                        {% endif %}
+                    </h1><br>
+                    <a class="custom_btn" href="{% url 'home' %}"><strong>Все коктейли</strong></a>&nbsp
+                    <a class="custom_btn" href="{% url 'unforgettable' %}"><strong>Незабываемые</strong></a>&nbsp
+                    <a class="custom_btn" href="{% url 'modern_classic' %}"><strong>Современная классика</strong></a>&nbsp
+                    <a class="custom_btn" href="{% url 'new_era_drinks' %}"><strong>Напитки новой эры</strong></a>&nbsp
+
+                    <form action="{% url 'home' %}" method="get">
+                        <input class="searching_line" name="searching_data" type="text" placeholder="Поиск по библиотеке">
+                    </form>
+                </div>
             <br>
             {% block content %}
             {% endblock content %}
-            <div class="kandinsky">
-                Информация взята из публичных открытых источников и не предназначена для коммерческого использования.<br>
-                Изображения сгенерированы с помощью нейросети Kandinsky 2.2 <br>
-            </div>
+<!--            <div class="kandinsky">-->
+<!--                Информация взята из публичных открытых источников и не предназначена для коммерческого использования.<br>-->
+<!--                Изображения сгенерированы с помощью нейросети Kandinsky 2.2 <br>-->
+<!--            </div>-->
         </div>
-
     </body>
 </html>

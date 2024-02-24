@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.db.models import Q
 
 from .models import *
 
@@ -40,6 +41,18 @@ class CocktailsList(ListView):
     ordering = 'name'
     template_name = 'cocktail/cocktails_list.html'
     context_object_name = 'cocktails_list'
+
+    def get_queryset(self):
+        '''
+        ф-я переопределена для работы поиска
+        '''
+        query = self.request.GET.get('searching_data')
+        if query == None:
+            return Cocktail.objects.all().order_by('name')
+        return Cocktail.objects.filter(
+            Q(name__icontains=query) |
+            Q(compound__icontains = query)
+        )
 
 
 class CocktailDetail(DetailView):
