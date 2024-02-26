@@ -20,6 +20,9 @@
             height: 180px;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.7);
+            border-style: solid;
+            border-width: 1px;
+            border-bottom-color: rgba(255, 255, 255, 0.7);
             }
             .main_text {
             text-align: center;
@@ -32,7 +35,19 @@
             color: #ffffff;
             padding: 10px;
             border-radius: 5px;
-            border-color: #ffffff;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
+            }
+            .search_btn {
+            background: #000000;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
             }
             .short_info {
             height: 400px;
@@ -43,6 +58,9 @@
             padding: 20px;
             margin-top: 15px;
             border-radius: 15px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
             }
             .long_info {
             height: 680px;
@@ -54,6 +72,9 @@
             margin-top: 50px;
             border-radius: 15px;
             margin-bottom: 30px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
             }
             .photo {
             height: 500px;
@@ -61,12 +82,18 @@
             margin: 10px 80px auto 80px;
             display: flex;
             border-radius: 15px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
             }
             .small_photo {
             height: 300px;
             width: 300px;
             display: flex;
             border-radius: 10px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(255, 255, 255, 0.7);
             }
             .wrapper {
             display: grid;
@@ -109,7 +136,8 @@
                     <a class="custom_btn" href="{% url 'new_era_drinks' %}"><strong>Напитки новой эры</strong></a>&nbsp
 
                     <form action="{% url 'home' %}" method="get">
-                        <input class="searching_line" name="searching_data" type="text" placeholder="Поиск по библиотеке">
+                        <input class="searching_line" name="searching_data" type="text" placeholder="Поиск по библиотеке">&nbsp
+                        <button type="submit" class="search_btn"><strong>Найти</strong></button>&nbsp
                     </form>
                 </div>
             <br>
