@@ -1,6 +1,9 @@
 # IBA
 web-приложение о коктейлях, признанных Международной ассоциации барменов (IBA)<br>
-У данного приложени есть телеграм-бот, осуществляющий поиск в БД по названию коктейлей<br><br>
+На данной итерации вы можете осуществлять поиск по БД, использую названия коктейля или ингредиентов. Так же вы можете воспользоваться телеграм-ботом @iba_cocktails_bot, но пока там реализован поиск только по названию коктейля.<br><br>
 Django, PostgreSQL, Aiogramm <br><br>
-![photo_2](https://github.com/ivanbal93/IBA/assets/124522145/7ed63aec-5b68-4410-89f8-467914fd31b5)<br><br>
-![photo_3](https://github.com/ivanbal93/IBA/assets/124522145/b1edd3d5-38df-4766-96e9-155d16ff3246)
+<br><br>
+![main_page](https://github.com/ivanbal93/IBA/assets/124522145/d52d9309-e72d-45d3-bad4-b4c6e63aa7cd)
+![example](https://github.com/ivanbal93/IBA/assets/124522145/2c095fc8-9544-4b55-af00-a5badc395780)
+![searching_example](https://github.com/ivanbal93/IBA/assets/124522145/f376a5d0-e810-4871-8c49-8ae6bb2bd80e)
+![tg](https://github.com/ivanbal93/IBA/assets/124522145/896b8746-00ec-4944-a9fd-5c55a6c0b51f)
