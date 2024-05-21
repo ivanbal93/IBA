@@ -123,6 +123,7 @@ celerybeat.pid
 django_application/.secret
 .venv
 .env
+env_config.py
 env/
 venv/
 ENV/
